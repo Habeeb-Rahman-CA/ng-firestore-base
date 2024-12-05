@@ -1,0 +1,12 @@
+<form action="">
+    <input [(ngModel)]="students.firstName" name="firstName" type="text" placeholder="First Name">
+    <input [(ngModel)]="students.lastName" name="lastName" type="text" placeholder="Last Name">
+    <input [(ngModel)]="students.age" name="age" type="number" placeholder="Age">
+    <button (click)="addStudent()">Add</button>
+</form>
+
+<ul>
+    @for (student of studentList; track $index) {
+        <li>{{student.firstName}} {{student.lastName}} <button (click)="deleteStudent(student.id)">delete</button></li>
+    }
+</ul>
